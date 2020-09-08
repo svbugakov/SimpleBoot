@@ -1,1 +1,3 @@
 java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -jar simpleBoot-1.0-SNAPSHOT.jar
+docker run -e "JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000" -p 8080:8080 -t simpleboot
+docker run -p 8080:8080 -p 8000:8000 -t simpleboot2
