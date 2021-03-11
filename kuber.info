@@ -1,3 +1,10 @@
 kubectl create secret docker-registry regcred --docker-username=svbugakov --docker-password=pwd --docker-email=s..@gmail.com -n kuber
 kubectl run ksimple-boot --generator=run-pod/v1 --image=svbugakov/kuber:simole-boot --port=8080
 kubectl port-forward ksimple-boot 8081:8080
+
+kubectl describe pod ksimple-boot
+kubectl get pods
+kubectl delete pods ksimple-boot
+
+/usr/local/bin/kubectl apply -f pod-simple-boot-v1.yaml
+/usr/local/bin/kubectl delete -f pod-simple-boot-v1.yaml

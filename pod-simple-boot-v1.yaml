@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ksimple-boot
+spec:
+  containers: 
+      - name: ksimple-boot 
+        image: svbugakov/kuber:simole-boot
+        ports:
+          - containerPort: 8080
