@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ksimple-boot-deployment
+  labels: 
+     app: app-ksimple-boot
+     env: prod
+     owner: bugakov
+spec:
+  selector:
+    matchLabels:
+      project: projsimpleboot
+  template:
+    metadata:
+      labels:
+        project: projsimpleboot
+    spec: 
+      containers: 
+        - name: projsimpleboot-ksimpleboot 
+          image: svbugakov/kuber:simole-boot
+          ports:
+            - containerPort: 8080
