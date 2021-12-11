@@ -4,7 +4,7 @@ LABEL author="svbugakov"
 MAINTAINER svbugakov@gmail.com
 
 # environment
-EXPOSE 8080
+EXPOSE 8090
 
 # executable ADD service-one-5.0.0-SNAPSHOT.jar app.jar
 ADD simpleBoot-1.0-SNAPSHOT.jar app.jar

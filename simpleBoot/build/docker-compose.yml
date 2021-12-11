@@ -9,16 +9,22 @@ services:
     hostname: "simple-boot"
     build: ../target
     ports:
-      - "8080:8080"
-      - "8000:8000"
+      - "8090:8096"
+     # - "8000:8000"
     expose:
-      - "8080" 
+      - "8096"
     networks:
-      - backend
+        backend:
+          ipv4_address: 172.16.1.3
     environment:
       JAVA_OPTS: ${javaOpts}
+      IGN_IP: 172.16.1.3
 
 networks:
   backend:
+    external: true
     driver: bridge
+    ipam:
+       config:
+         - subnet: 172.16.1.0/24
 
